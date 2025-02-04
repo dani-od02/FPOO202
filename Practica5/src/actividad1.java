@@ -8,7 +8,7 @@ public class actividad1 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Ingresa un numero: ");
+        System.out.print("Ingresa un numero (entero positivo): ");
         int numero = sc.nextInt();
 
         for (int i = 1; i <= numero; i++) {

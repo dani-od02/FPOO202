@@ -8,17 +8,13 @@ public class actividad3 {
         Scanner sc = new Scanner(System.in);
 
 
-        System.out.print("Ingrese tabla de multiplicar que se desea: ");
+        System.out.print("Ingrese la tabla de multiplicar que se requiere: ");
         int num = sc.nextInt();
-
-        //Tabla de multiplicar
 
         for(int i = 1; i<= 10; i++){
             System.out.println(i + " * " + num + " = " + i * num);
         }
 
         sc.close();
-
-
     }
 }

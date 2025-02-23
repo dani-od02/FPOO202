@@ -6,6 +6,7 @@ public class Main {
         cuenta.noCuenta = 122046026;
 
         cuenta.titular = JOptionPane.showInputDialog("Ingrese su nombre :");
+        cuenta.edad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su edad:"));
         cuenta.saldo = Float.parseFloat(JOptionPane.showInputDialog("Ingrese su saldo inicial :"));
 
         String opcion;

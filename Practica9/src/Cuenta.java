@@ -4,6 +4,7 @@ public class Cuenta {
     int noCuenta;
     String titular;
     float saldo;
+    int edad;
 
     public float ConsultarSaldo() {
     JOptionPane.showMessageDialog(null, "Saldo: " + saldo);

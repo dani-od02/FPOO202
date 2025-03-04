@@ -1,43 +1,49 @@
-public class Main {
+// practica 9
+
+import javax.swing.JOptionPane;
+
+public class main {
     public static void main(String[] args) {
 
-        //creamos el primer objeto
-        Spartan masterChief = new Spartan("John",100,70,"Rifle de asalto");
 
-       /* //usar atributos
-        masterChief.setNombre ();
-        masterChief.setSalud ();
-        masterChief.setEscudo ();
-        masterChief.setArmaPrincipal ();*/
-
-        //invocamos los métodos
-        masterChief.mostrarInfo();
-        masterChief.atacar("Grunt");
-        masterChief.recargarArma(75);
-        masterChief.correr(true);
-
-        //usamos get y set para cambiar atributo nombre
-        masterChief.setNombre("Dani");
-        masterChief.mostrarInfo();
-        System.out.println( masterChief.getNombre());
+        int noCuenta= 122046026;
+        String titular = JOptionPane.showInputDialog("Ingrese su nombre:");
+        int edad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su edad:"));
+        float saldo = Float.parseFloat(JOptionPane.showInputDialog("Ingrese su saldo inicial:"));
 
 
-        //creamos el segundo objeto
-        Spartan arbiter = new Spartan(" Thel Vadam",90,80 ,"Espada de energía");
+        cuenta Cuenta = new cuenta(noCuenta, titular, saldo, edad);
 
-       /* //usar atributos
-        arbiter.setNombre();
-        arbiter.setSalud();
-        arbiter.setEscudo();
-        arbiter.setArmaPrincipal();*/
+        String opcion;
+        do {
+            opcion = JOptionPane.showInputDialog(
+                    "Eliga una opción:\n" +
+                            "1. Consultar saldo\n" +
+                            "2. Ingresar efectivo\n" +
+                            "3. Retirar efectivo\n" +
+                            "4. Salir"
+            );
 
-        //invocamos los métodos
-        arbiter.mostrarInfo();
-        arbiter.atacar("Jackal");
-        arbiter.recargarArma(50);
-        arbiter.correr(false);
+            if (opcion == null) break;
 
-
+            switch (opcion) {
+                case "1":
+                    Cuenta.ConsultarSaldo();
+                    break;
+                case "2":
+                    float ingreso = Float.parseFloat(JOptionPane.showInputDialog("Monto a ingresar:"));
+                    Cuenta.IngresarEfectivo(ingreso);
+                    break;
+                case "3":
+                    float retiro = Float.parseFloat(JOptionPane.showInputDialog("Monto a retirar:"));
+                    Cuenta.RetirarEfectivo(retiro);
+                    break;
+                case "4":
+                    JOptionPane.showMessageDialog(null, "Vuelva pronto!");
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opción inválida.");
+            }
+        } while (!"4".equals(opcion));
     }
 }
-

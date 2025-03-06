@@ -29,7 +29,7 @@ public class Spartan extends Soldado{
         System.out.println(nombre + "El Spartan ha recargado su escudo al maximo" );
     }
     @Override
-    public void monstrarInfo(){
+    public void mostrarInfo(){
         super.mostrarInfo();
         System.out.println("escudo: "+ this.escudo);
     }

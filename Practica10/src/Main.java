@@ -31,7 +31,7 @@ public class Main {
         String contrasena = password.generarPassword(longitud, incluirMayus, incluirMinus, incluirEspecial, incluirNumeros);
 
 
-        String Fortaleza = fortaleza.verificarfortaleza(contrasena);
+        String Fzortaleza = Fortaleza.verificarFortaleza(contrasena);
 
         JOptionPane.showMessageDialog(null, "Contraseña generada: " + contrasena + "\nFortaleza: " + Fortaleza);
     }

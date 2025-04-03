@@ -97,6 +97,11 @@ public class FormRegistro extends javax.swing.JFrame {
         jLabel4.setText("Contraseña");
 
         txtcontrasena.setBackground(new java.awt.Color(204, 204, 255));
+        txtcontrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcontrasenaActionPerformed(evt);
+            }
+        });
 
         btnlimpiar.setBackground(new java.awt.Color(153, 0, 153));
         btnlimpiar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -207,12 +212,16 @@ public class FormRegistro extends javax.swing.JFrame {
     private void limpiarCampos(){
         txtnombre.setText(" ");
         txtcorreo.setText(" ");
-        txtcontrasena.setText("v");
+        txtcontrasena.setText(" ");
     }
     
     private void btnlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiarActionPerformed
         limpiarCampos();
     }//GEN-LAST:event_btnlimpiarActionPerformed
+
+    private void txtcontrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcontrasenaActionPerformed
 
 
     /**

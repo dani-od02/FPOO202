@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.*;
+import javax.swing.JOptionPane;
 // ResultSet: es como una arreglo pero se trata como un objeto y contiene el resultado de una consulta;
 public class UserCRUD {
     
@@ -88,6 +89,52 @@ public class UserCRUD {
         return false;
     }
 }
-
+       public boolean eliminarUsuario(int id) {
+           
+    int respuesta = JOptionPane.showConfirmDialog(
+        null, 
+        "¿Estás seguro de que quieres eliminar este usuario?", 
+        "Confirmar eliminación", 
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.WARNING_MESSAGE
+    );
     
+    if (respuesta != JOptionPane.YES_OPTION) {
+        return false;
+    }
+    
+    String sqlDelete = "DELETE FROM usuarios WHERE id = ?";
+    
+    try {
+        PreparedStatement ps = conexion.prepareStatement(sqlDelete);
+        ps.setInt(1, id);
+        boolean eliminado = ps.executeUpdate() > 0;
+        
+        if (eliminado) {
+            JOptionPane.showMessageDialog(
+                null, 
+                "Usuario eliminado correctamente", 
+                "Éxito", 
+                JOptionPane.INFORMATION_MESSAGE
+            );
+        } else {
+            JOptionPane.showMessageDialog(
+                null, 
+                "No se encontró el usuario con ID: " + id, 
+                "Advertencia", 
+                JOptionPane.WARNING_MESSAGE
+            );
+        }
+        
+        return eliminado;
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(
+            null, 
+            "Error al intentar eliminar usuario: " + e.getMessage(), 
+            "Error", 
+            JOptionPane.ERROR_MESSAGE
+        );
+        return false;
+    }
+}
 }
